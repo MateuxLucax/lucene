@@ -416,13 +416,11 @@ public abstract class BaseFragmentsBuilder implements FragmentsBuilder {
     return getPostTag(postTags, num);
   }
 
-  protected String getPreTag(String[] preTags, int num) {
-    int n = num % preTags.length;
-    return preTags[n];
+  protected String getPreTag(final String[] preTags, final int num) {
+    return preTags[num];
   }
 
-  protected String getPostTag(String[] postTags, int num) {
-    int n = num % postTags.length;
-    return postTags[n];
+  protected String getPostTag(final String[] postTags, final int num) {
+    return postTags[num];
   }
 }

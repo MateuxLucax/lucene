@@ -98,7 +98,7 @@ public class FieldPhraseList {
           if (currMap.isValidTermOrPhrase(phraseCandidate)) {
             addIfNoOverlap(
                 new WeightedPhraseInfo(
-                    phraseCandidate, currMap.getBoost(), currMap.getTermOrPhraseNumber()));
+                    phraseCandidate, currMap.getBoost(), currMap.getHighlightQueryIndex()));
           } else {
             while (phraseCandidate.size() > 1) {
               fieldTermStack.push(phraseCandidate.removeLast());
@@ -106,7 +106,7 @@ public class FieldPhraseList {
               if (currMap != null) {
                 addIfNoOverlap(
                     new WeightedPhraseInfo(
-                        phraseCandidate, currMap.getBoost(), currMap.getTermOrPhraseNumber()));
+                        phraseCandidate, currMap.getBoost(), currMap.getHighlightQueryIndex()));
                 break;
               }
             }
